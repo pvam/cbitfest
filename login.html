@@ -65,22 +65,18 @@ var password="";
 function login()
 {
    username=document.getElementById('handle').value;
-	password=document.getElementById('password').value;			
+	password=document.getElementById('password').value;		
 	setCookie("username",username,1);	
 	var xhr = new XMLHttpRequest();
 				xhr.open('GET', 'js/login.php?id='+username,false);
 				xhr.send(null);
 				var response = xhr.responseText;
-				console.log(response);
-				if(response==(username+password))
+				if(response==password)
 				alert("welcome "+getCookie("username"));
 				else
-				alert("wrong username or password");
-	
-	
-	
+				alert("wrong username or password");	
 }
-function handle_test()
+function handle_test() 
 {
                 /*var xhr = new XMLHttpRequest();
 				xhr.open('GET', 'registration.php?id='+username,false);

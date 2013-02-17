@@ -9,7 +9,7 @@
    }
 
 
-   $stmt1 ="Select * from cbit where handle=?";
+   $stmt1 ="Select * from json where handle=?";
 	$prp1 = $conn->prepare($stmt1);
     if($prp1->execute(array($_GET['id'])) )
 	{

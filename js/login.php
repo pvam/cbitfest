@@ -1,5 +1,6 @@
 <?php
-	try {
+
+try {
     $conn = new PDO ( "sqlsrv:server = tcp:pvp6ee8yc7.database.windows.net,1433; Database = gamer_scores", "dummies", "dumm!es3");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
@@ -7,25 +8,46 @@
    print( "Error connecting to SQL Server." );
    die(print_r($e));
    }
-   $stmt1 ="Select * from json where handle=?";
+   $check=false;
    
-	$prp1 = $conn->prepare($stmt1);
-	
-	
-    if($prp1->execute(array($_GET['id'])) )
-	{
-		$registrant = $prp1->fetchAll();
-		  if(count($registrant) >0) {
-     	  $decode=json_decode($registrant['object']);	
-		  $handle=$_GET['id'];
-		  $password=$decode->password;
-		  $res=$handle.$password;
-		     echo $res;			 
+   $stmt1 ="Select * from cbit where handle=?";
+ $prp1 = $conn->prepare($stmt1);
+  if($prp1->execute(array($_GET['handle'])) )
+ {
+  $registrant1 = $prp1->fetch();
+    // print_r($registrant1);
+     if(count($registrant1) >0)
+      {
+		  $tmp = json_decode($registrant1['object']);
+		  
+		  if($tmp->password==$_GET['password'])
+		  {
+			  $check=true;
+			  print '<script>';
+		      print'alert("Success!!cool!!")';
+		      print '</script>';
 		  }
-	      else
-	         echo "absent";
-	}
-	else
+		  else
+		  {
+			  print '<script>';
+		      print'alert("Wrong password!!")';
+		      print '</script>';
+			  
+		}
+		if($check&&isset($_GET['but']))
+	    {
+			
+            header("Location: www.google.com") ;
+		}	
+				  		  
+      }
+	  else
+	  {
+		print '<script>';
+		print'alert("You are not registered!")';
+		print '</script>';
+	  }
+}
 
 
 ?>
