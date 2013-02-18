@@ -55,10 +55,10 @@ public $gender ="";
 		  $string=json_encode($user);
 		  echo $string;
 		  echo "<br>";
-		  $insert = "INSERT into cbit(object,handle) VALUES (?,?)";
+		  $insert = "INSERT into cbit(handle,object) VALUES (?,?)";
 		  $stmt=$conn->prepare($insert);
-		  $stmt->bindValue(1,$string);
-		  $stmt->bindValue(2,$user->handle);
+		  $stmt->bindValue(1,$_POST["handle"]);
+		  $stmt->bindValue(2,$string);
 		  $stmt->execute();
 		  echo "<br>inserted data";
 		  //Writes the photo to the server 
