@@ -35,7 +35,7 @@
 <div class="offset2 span8 border-radius" style="background-color:rgba(229,229,229,0.25);border:thick;border-color:#F3C">
 <!--registration form-->
   <div class="span8">
-<form class="form-horizontal" id="registerHere">
+<form method="post" action="registration.php" enctype="multipart/form-data" class="form-horizontal" id="registerHere">
     <div class="row">
     <div class="span2">
     <img src="images/card.png">
@@ -164,8 +164,8 @@ document.getElementById("correct").style.visibility = "hidden";
 				}
 
 }
-/*verifying the details on button click*/
-function check()
+/*/*verifying the details on button click*/
+/*--function check()
 { 
 	if(handlecorrect)
 	{
@@ -178,7 +178,7 @@ function check()
 		handle = document.getElementById("handle").value;
 		var encoded = JSON.stringify(enc);
 					/*ajax call to verify handle correctness*/
-		  var xhr = new XMLHttpRequest();
+		  /*var xhr = new XMLHttpRequest();
 		  xhr.open('GET','reginsert.php?id='+handle+'&object='+encoded,false);
 		  xhr.send(null);
 		  var response = xhr.responseText;
@@ -190,7 +190,7 @@ function check()
 		  alert("error");
 	}
 }
-
+*/
 	  $(document).ready(function(){
 			$("#registerHere").validate({
 				rules:{
