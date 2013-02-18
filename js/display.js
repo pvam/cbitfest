@@ -28,7 +28,7 @@ var xhr = new XMLHttpRequest();
 console.log(encoded);
 decoded = JSON.parse(encoded);
 
-document.getElementById("fname").innerHTML = decoded.firstname;
+//document.getElementById("fname").innerHTML = decoded.firstname;
 document.getElementById("gender").innerHTML = decoded.gender;
 document.getElementById("email").innerHTML = decoded.email;
 document.getElementById("dob").innerHTML = decoded.dob;
