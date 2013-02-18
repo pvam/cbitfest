@@ -1,7 +1,7 @@
 <pre>
 <?php
-error_reporting(E_ALL); // or E_STRICT
-ini_set("display_errors",1);
+/*error_reporting(E_ALL); // or E_STRICT
+ini_set("display_errors",1);*/
 //ini_set("memory_limit","1024M");
 //print_r($_FILES['photo']);
 //print_r($_POST);
@@ -12,7 +12,7 @@ ini_set("display_errors",1);
     }
    catch ( PDOException $e ) {
    print( "Error connecting to SQL Server." );
-   die(print_r($e));
+//   die(print_r($e));
    }
 class User {
     public $name = "";
