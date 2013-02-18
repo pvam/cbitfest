@@ -11,20 +11,63 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 }
+.background {
+	background-color:#CECECE;
+}
 </style>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script src="js/cookies.js"></script>
 
 </head>
 
-<body>
-<div>
-<strong>Name :</strong> <p id="fname" style="color:#603"></p>
-<strong>Date of Birth :</strong> <p id="dob" style="color:#603"></p>
-<strong>Username :</strong> <p id="handle" style="color:#603"></p>
-<strong>Email :</strong> <p id="email" style="color:#603"></p>
-<strong>Gender :</strong> <p id="gender" style="color:#603"></p>
-            
+<body class="background">
+<div class="row">
+<div style="height:200px"></div>
+</div>
+<div class="container">
+<div class=" offset1 row-fluid">
+<div class="span3">
+<img src="" id="image" >
+</div>
+<div class="offset1 span4">
+<div class="row">
+<div style="height:30px"></div>
+</div>
+<div class="control-group">
+		<label class="control-label label1">Name</label>
+	      <div class="controls">
+	       <p id="fname" style="color:#603"></p>     
+	      </div>
+	</div>
+<div class="control-group">
+		<label class="control-label label1">Date of Birth</label>
+	      <div class="controls">
+	        <p id="dob" style="color:#603"></p>     
+	      </div>
+	</div>
+    
+    <div class="control-group">
+		<label class="control-label label1">User Name</label>
+	      <div class="controls">
+	      <p id="handle" style="color:#603"></p>     
+	      </div>
+	</div>
+    
+    <div class="control-group">
+		<label class="control-label label1">Email id</label>
+	      <div class="controls">
+	      <p id="email" style="color:#603"></p>    
+	      </div>
+	</div>
+    
+    <div class="control-group">
+		<label class="control-label label1">Gender</label>
+	      <div class="controls">
+	        <p id="gender" style="color:#603"></p>   
+	      </div>
+	</div>
+  </div>
+</div>          
 </div>
 <script src="js/display.js"></script>
 </body>

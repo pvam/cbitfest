@@ -27,7 +27,7 @@ var xhr = new XMLHttpRequest();
     var encoded = xhr.responseText;
 console.log(encoded);
 decoded = JSON.parse(encoded);
-
+document.getElementById("image").src = "http://cbitfest.azurewebsites.net/"+decoded.imagepath; 
 document.getElementById("fname").innerHTML = decoded.name;
 document.getElementById("gender").innerHTML = decoded.gender;
 document.getElementById("email").innerHTML = decoded.email;
