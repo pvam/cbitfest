@@ -53,6 +53,8 @@ public $gender ="";
 		  if($stmt->execute())
 		  {
 			  echo "success";
+			  echo "<br>";
+			  echo "<a href=\"login.html\"><h3>"."Login now"."</h3></a>";
 		  }
 		  else
 		  {
@@ -70,4 +72,8 @@ public $gender ="";
 		}
     }
     ?>
+    <html>
+    <body style="background-color:#0099FF">
+    </body>
+    </html>
 </pre>
