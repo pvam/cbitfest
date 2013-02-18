@@ -1,4 +1,4 @@
-document.getElementById("fname").innerHTML = "Sai Sreenivasan";
+
 var id = getCookie("username");//handle
 	
 //to get the cookie value(username)	in this page
