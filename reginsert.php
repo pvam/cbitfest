@@ -30,18 +30,11 @@ public $gender ="";
         // $target = $target.basename($_FILES['photo']['name']); 
 		 $c = uniqid (rand (),true);
 		 $ext = pathinfo($_FILES['photo']['name']);
-		 echo $ext;
 		 $extn = $ext['extension'];
 		 $c = $c .".".$extn;
 		 if(move_uploaded_file($_FILES['photo']['tmp_name'],$c)) 
 		 { 
-		 //Tells you if its all ok 
-		 echo "Image ". $_FILES['photo']['name']."has been uploaded to http://icards.azurewebsites.net/".$c; 
-		 } 
-		 else { 
-		 //Gives and error if its not 
-		 echo "Sorry, there was a problem uploading your file."; 
-		 echo "<br>".$_FILES['photo']['error'];
+		 //Tells you if its all ok  
 		 } 
 		 $user = new User();
 		 //echo $_FILES["photo"]["name"];
@@ -53,7 +46,6 @@ public $gender ="";
 		  $user->gender=$_POST["gender"];
 		  $user->dob=$_POST["dob"];
 		  $string=json_encode($user);
-		  echo "<br>";
 		  $insert = "INSERT into cbit(handle,object) VALUES (?,?)";
 		  $stmt=$conn->prepare($insert);
 		  $stmt->bindValue(1,$_POST["handle"]);
@@ -72,7 +64,6 @@ public $gender ="";
     catch(Exception $e)
     {
         //die( mssql_POST_last_message());
-		die(var_dump($e));
 		if($e->getCode()==23000)//code for primary key 23000
 		{
 		echo "primary key voilation :(";
