@@ -4,7 +4,7 @@ error_reporting(E_ALL); // or E_STRICT
 ini_set("display_errors",1);
 //ini_set("memory_limit","1024M");
 //print_r($_FILES['photo']);
-print_r($_POST);
+//print_r($_POST);
 //print_r($_POST['photo']);
 	try {
     $conn = new PDO ( "sqlsrv:server = tcp:pvp6ee8yc7.database.windows.net,1433; Database = gamer_scores", "dummies", "dumm!es3");
